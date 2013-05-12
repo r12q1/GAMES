@@ -12,11 +12,17 @@
     Public TextCol As Color = Color.FromArgb(50, 71, 45)
     Public Const SPEL_WIDTH = 396
     Public Const SPEL_HEIGHT = 324
+    Public level As String
+    Public highscore1 = My.Computer.FileSystem.ReadAllText("E:\File\Ular\Ular\ular1.txt")
+    Public highscore2 = My.Computer.FileSystem.ReadAllText("E:\File\Ular\Ular\ular2.txt")
+    Public highscore3 = My.Computer.FileSystem.ReadAllText("E:\File\Ular\Ular\ular3.txt")
+    Public highscore4 = My.Computer.FileSystem.ReadAllText("E:\File\Ular\Ular\ular4.txt")
+
     Public Sub Gambar()
         M.DrawImage(B, New Point(0, 0))
     End Sub
     Public Sub Ular()
-        G.Clear(Color.Blue)
+        G.Clear(Color.RoyalBlue)
 
         For I As Integer = 0 To length
             If I = Bak Then

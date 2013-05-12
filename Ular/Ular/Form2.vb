@@ -96,20 +96,40 @@
             If I <> fram And Segment(fram).X = Segment(I).X And Segment(fram).Y = Segment(I).Y Then
                 GameOver = True
                 Dim pesan As String
-                pesan = MessageBox.Show("Permainan Selesai ! Main Lagi ?", "Ular", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                If pesan = vbYes Then
-                    Gambar()
-                Else
-                    Form1.Show()
-                    Me.Hide()
+                If level = "Easy" Then
+                    If score > highscore1 Then
+                        highscore1 = score
+                        MessageBox.Show("New Highscore Level Easy : " & score, "Selamat!!!")
+                    End If
+                    My.Computer.FileSystem.WriteAllText("E:\File\Ular\Ular\ular1.txt", score, False)
+                ElseIf level = "Medium" Then
+                    If score > highscore2 Then
+                        highscore2 = score
+                        MessageBox.Show("New Highscore Level Medium : " & score, "Selamat!!!")
+                    End If
+                    My.Computer.FileSystem.WriteAllText("E:\File\Ular\Ular\ular2.txt", score, False)
+                ElseIf level = "Hard" Then
+                    If score > highscore3 Then
+                        highscore3 = score
+                        MessageBox.Show("New Highscore Level Hard : " & score, "Selamat!!!")
+                    End If
+                    My.Computer.FileSystem.WriteAllText("E:\File\Ular\Ular\ular3.txt", score, False)
+                ElseIf level = "Crazy" Then
+                    If score > highscore4 Then
+                        highscore4 = score
+                        MessageBox.Show("New Highscore Level Crazy : " & score, "Selamat!!!")
+                    End If
+                    My.Computer.FileSystem.WriteAllText("E:\File\Ular\Ular\ular4.txt", score, False)
                 End If
-                Exit Sub
+                Me.Hide()
+                Form3.Show()
             End If
         Next
 
         If Gamepoint.X = Segment(fram).X And Gamepoint.Y = Segment(fram).Y Then Makan() : score = score + 1 : length = length + 1
-        Label1.Text = "= " & score & ""
+        Label3.Text = score
         Ular()
         Gambar()
     End Sub
+
 End Class

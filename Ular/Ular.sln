@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Basic Express 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Ular", "Ular\Ular.vbproj", "{8CB1462C-5F50-47CB-B6BE-3E70D8A6B764}"
 EndProject
 Global
